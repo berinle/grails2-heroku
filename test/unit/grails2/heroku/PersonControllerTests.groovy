@@ -13,7 +13,7 @@ class PersonControllerTests {
     def populateValidParams(params) {
       assert params != null
       // TODO: Populate valid properties like...
-      //params["name"] = 'someValidName'
+      params["name"] = 'someValidName'
     }
 
     void testIndex() {
@@ -106,7 +106,8 @@ class PersonControllerTests {
         // test invalid parameters in update
         params.id = person.id
         //TODO: add invalid values to params object
-
+		params.name = ''
+		
         controller.update()
 
         assert view == "/person/edit"
